@@ -1,0 +1,12 @@
+mat-card{
+    width: 40%;
+    margin: auto;
+    margin-top: 5%;
+}
+mat-form-field{
+    width: 75%;
+}
+mat-hint{
+    color: red!important;
+    font-style: italic;
+}

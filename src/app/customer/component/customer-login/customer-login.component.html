@@ -1,0 +1,24 @@
+<mat-card class="admin-login-card">
+    <mat-card-header>
+        <div mat-card-avatar><mat-icon>tag_faces</mat-icon></div>
+        <mat-card-title>Customer Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="customerLoginForm">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" autocomplete="off">
+                <mat-hint *ngIf="customerLoginForm.get('email').errors && customerLoginForm.get('email').errors.required && customerLoginForm.get('email').touched">Email is required</mat-hint>
+            </mat-form-field> <br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" autocomplete="off">
+                <mat-hint *ngIf="customerLoginForm.get('password').errors && customerLoginForm.get('password').errors.required && customerLoginForm.get('password').touched">Password is required</mat-hint>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+        
+    <mat-card-actions align="end">
+        <button (click)="onCustomerLogin()" color="primary" mat-raised-button [disabled]="customerLoginForm.status === 'INVALID'">Login</button>
+    </mat-card-actions>
+</mat-card>

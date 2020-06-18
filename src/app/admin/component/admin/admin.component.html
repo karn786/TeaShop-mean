@@ -1,0 +1,23 @@
+<mat-card class="admin-login-card">
+    <mat-card-header>
+        <div mat-card-avatar><mat-icon>admin_panel_settings</mat-icon></div>
+        <mat-card-title>Admin Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="adminLoginForm">
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input type="text" matInput formControlName="adminName" autocomplete="off">
+                <mat-hint *ngIf="adminLoginForm.get('adminName').errors && adminLoginForm.get('adminName').errors.required && adminLoginForm.get('adminName').touched">Username is required</mat-hint>
+            </mat-form-field> <br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="adminPassword">
+                <mat-hint *ngIf="adminLoginForm.get('adminPassword').errors && adminLoginForm.get('adminPassword').errors.required && adminLoginForm.get('adminPassword').touched">Passwprd is required</mat-hint>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-raised-button color="primary" (click)="onAdminLogin()" [disabled]="adminLoginForm.status === 'INVALID'">Login</button>
+    </mat-card-actions>
+</mat-card>

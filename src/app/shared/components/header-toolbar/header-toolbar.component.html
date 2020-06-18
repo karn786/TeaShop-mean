@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="navbar">
+    <div>Online Store</div>
+    <div>
+        <span [matMenuTriggerFor]="customer">Customer</span>
+        <span routerLink="admin-login">Admin</span>
+        <span routerLink="home"><mat-icon color="accent">home</mat-icon></span>
+    </div>
+</mat-toolbar>
+
+<mat-menu #customer="matMenu">
+    <button mat-menu-item routerLink="customer-login">Login</button>
+    <button mat-menu-item routerLink="customer-signup">Sign Up</button>
+</mat-menu>

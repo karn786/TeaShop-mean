@@ -1,0 +1,9 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav>
+        <app-customer-dashboard-sidenav></app-customer-dashboard-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button mat-mini-fab (click)="sidenav.toggle()">>></button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
