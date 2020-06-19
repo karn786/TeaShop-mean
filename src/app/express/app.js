@@ -13,6 +13,10 @@ app.use(adminRouter);
 app.use(customerRouter);
 app.use(express.static(__dirname + '/dist/TEASHOP'));
 
+app.get('/*', function(req,res) {
+    res.sendFile(path.join(__dirname+'/dist/TEASHOP/index.html'));
+});
+
 app.listen(port, () => {
     console.log("server started at port "+port);
 })
